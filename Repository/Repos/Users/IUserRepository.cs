@@ -1,22 +1,21 @@
 ﻿using Domain.Entities;
-using Repository.Shared;
 using System.Collections.Generic;
 
-namespace Repository.Users
+namespace Repository
 {
     public interface IUserRepository
     {
-        bool AddUser(User user);
+        bool Add(User obj);
 
-        IEnumerable<User> GetAllUsers(PaginationData pagination);
-        int GetAllUsersCount();
-        User GetUserBy(int id);
-        User GetUserBy(string name);
+        IEnumerable<User> GetAll(PaginationData p);
+        int GetAllCount();
+        User GetById(int id);
+        User GetByName(string name);
+        User GetByEmail(string email);
 
-        bool UpdateUser(User user);
+        bool Update(User obj);
 
-        bool RemoveUserBy(int id);
-        bool RemoveUserBy(string name);
-
+        bool RemoveBy(int id);
+        bool RemoveBy(string name);
     }
 }

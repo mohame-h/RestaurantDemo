@@ -1,0 +1,17 @@
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Service.deps.json
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Service.dll
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\ref\Service.dll
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Service.pdb
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Domain.dll
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Repository.dll
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Domain.pdb
+C:\Users\20101\source\repos\RestaurantDemo\Service\bin\Debug\net5.0\Repository.pdb
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.csproj.AssemblyReference.cache
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.AssemblyInfoInputs.cache
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.AssemblyInfo.cs
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.csproj.CopyComplete
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.dll
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\ref\Service.dll
+C:\Users\20101\source\repos\RestaurantDemo\Service\obj\Debug\net5.0\Service.pdb

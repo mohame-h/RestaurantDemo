@@ -21,7 +21,7 @@ namespace Repository.Users
             _dbQueries = _dbQueriesConnection.OpenConnection();
         }
 
-        public bool AddUser(User user)
+        public bool Add(User user)
         {
             try
             {
@@ -39,44 +39,55 @@ namespace Repository.Users
             }
         }
 
-        public IEnumerable<User> GetAllUsers(PaginationData pagination)
+        public IEnumerable<User> GetAll(PaginationData pagination)
         {
             var getAllUsersSQL = @"SELECT Name, Age, Email 
                                     FROM User
+                                    WHERE IsDeleted= 0 AND IsActive= 1
                                     OFFSET @Skip Rows
                                     FETCH NEXT @Take Rows ONLY";
             var users = _dbQueries.Query<User>(getAllUsersSQL, new { Skip = ((pagination.PageNumber - 1) * pagination.RequiredItemsCount), Take = pagination.RequiredItemsCount });
             return users;
         }
 
-        public int GetAllUsersCount()
+        public int GetAllCount()
         {
-            var totalUsersSQL = @"SELECT COUNT(Id) FROM User";
+            var totalUsersSQL = @"SELECT COUNT(Id)
+                                FROM User 
+                                WHERE IsDeleted= 0 AND IsActive= 1";
             var totalUsers = _dbQueries.ExecuteScalar<int>(totalUsersSQL);
             return totalUsers;
         }
 
-        public User GetUserBy(int id)
+        public User GetById(int id)
         {
-            var getUserSQL = @"SELECT Name, Age, Email 
-                                    FROM User
-                                    WHERE Id = @id";
+            var getUserSQL = @"SELECT * 
+                             FROM User
+                             WHERE Id = @id AND IsDeleted= 0 AND IsActive= 1";
             var result = _dbQueries.QueryFirstOrDefault<User>(getUserSQL, new { id });
             return result;
         }
 
-        public User GetUserBy(string name)
+        public User GetByName(string name)
         {
             var getUserSQL = @"SELECT Name, Age, Email 
-                                    FROM User
-                                    WHERE Name = @name";
+                             FROM User
+                             WHERE Name = @name AND IsDeleted= 0 AND IsActive= 1";
             var result = _dbQueries.QueryFirstOrDefault<User>(getUserSQL, new { name });
             return result;
         }
-
-        public bool RemoveUserBy(int id)
+        public User GetByEmail(string email)
         {
-            var user = _dbCommands.Users.FirstOrDefault(z => z.Id == id);
+            var getUserSQL = @"SELECT Name, Age, Email 
+                             FROM User
+                             WHERE Email = @email AND IsDeleted= 0 AND IsActive= 1";
+            var result = _dbQueries.QueryFirstOrDefault<User>(getUserSQL, new { email });
+            return result;
+        }
+
+        public bool RemoveBy(int id)
+        {
+            var user = _dbCommands.Users.FirstOrDefault(z => z.Id == id && z.IsActive == true && z.IsDeleted == false);
             if (user == null)
                 return false;
 
@@ -94,9 +105,9 @@ namespace Repository.Users
             }
         }
 
-        public bool RemoveUserBy(string name)
+        public bool RemoveBy(string name)
         {
-            var user = _dbCommands.Users.FirstOrDefault(z => z.Name == name);
+            var user = _dbCommands.Users.FirstOrDefault(z => z.Name == name && z.IsActive == true && z.IsDeleted == false);
             if (user == null)
                 return false;
 
@@ -114,9 +125,9 @@ namespace Repository.Users
             }
         }
 
-        public bool UpdateUser(User user)
+        public bool Update(User user)
         {
-            var oldUser = _dbCommands.Users.FirstOrDefault(z => z.Id == user.Id);
+            var oldUser = _dbCommands.Users.FirstOrDefault(z => z.Id == user.Id && z.IsActive == true && z.IsDeleted == false);
             if (oldUser == null)
                 return false;
 

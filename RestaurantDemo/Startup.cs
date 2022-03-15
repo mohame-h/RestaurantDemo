@@ -8,7 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Repository;
+using Repository.Features;
 using Repository.Users;
+using Service.UsersBO;
 using System.Text;
 
 namespace RestaurantDemo
@@ -88,11 +91,19 @@ namespace RestaurantDemo
                 });
             });
 
+            //Context
             services.AddDbContext<DBEntities>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 
+
+            //Reporitories
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IFeatureRepository, FeatureRepository>();
+            services.AddScoped<IUserFeaturesRepository, UserFeaturesRepository>();
+
+            //BOs
+            services.AddScoped<IUsersBO, UsersBO>();
 
 
         }

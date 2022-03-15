@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class UserFeatures : AuditableEntity
+    public class UserFeatures
     {
+        [Key]
         public int UserId { get; set; }
+        [Key]
         public int FeatureId { get; set; }
 
         [ForeignKey("UserId")]
