@@ -5,3 +5,11 @@ Domain/obj/Debug/net5.0/Domain.csproj.AssemblyReference.cache
 Repository/obj/Debug/net5.0/Repository.csproj.AssemblyReference.cache
 RestaurantDemo/obj/Debug/net5.0/WebAPI.csproj.AssemblyReference.cache
 Service/obj/Debug/net5.0/Service.csproj.AssemblyReference.cache
+*.cache
+*.v2
+.vs/RestaurantDemo/DesignTimeBuild/.dtbcache.v2
+.vs/RestaurantDemo/v16/.suo
+Domain/obj/Debug/net5.0/Domain.csproj.AssemblyReference.cache
+Repository/obj/Debug/net5.0/Repository.csproj.AssemblyReference.cache
+RestaurantDemo/obj/Debug/net5.0/WebAPI.csproj.AssemblyReference.cache
+Service/obj/Debug/net5.0/Service.csproj.AssemblyReference.cache
