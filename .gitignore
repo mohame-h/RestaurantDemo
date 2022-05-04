@@ -13,3 +13,9 @@ Domain/obj/Debug/net5.0/Domain.csproj.AssemblyReference.cache
 Repository/obj/Debug/net5.0/Repository.csproj.AssemblyReference.cache
 RestaurantDemo/obj/Debug/net5.0/WebAPI.csproj.AssemblyReference.cache
 Service/obj/Debug/net5.0/Service.csproj.AssemblyReference.cache
+/Service/obj/Debug/net5.0/refint
+/RestaurantDemo/obj/Debug/net5.0/refint
+/Repository/obj/Debug/net5.0/refint
+/Domain/obj/Debug/net5.0/refint
+/.vs/RestaurantDemo/v17/.suo
+/.vs/RestaurantDemo/v17/.futdcache.v1
